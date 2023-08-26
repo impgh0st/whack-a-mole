@@ -59,3 +59,29 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// RESET GAME BUTTON
+
+// Get references to your game elements or any data that needs to be reset
+const scoreElement = document.querySelector('.sb__score');
+const moleElements = document.querySelectorAll('.wgs__mole-head');
+
+// Function to reset the game
+function resetGame() {
+    // Reset score
+    scoreElement.textContent = '0';
+
+    // Hide all mole images
+    moleElements.forEach(mole => mole.classList.add('wgs__mole-head--hidden'));
+
+    // Additional reset logic if needed
+
+    // Hide game over message
+    const gameOverElement = document.querySelector('.sb__game-over');
+    gameOverElement.classList.add('sb__game-over--hidden');
+}
+
+// Add event listener to the reset button
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', resetGame);
+// Create a function called checkForWin that will check if one of the players has won by checking if their counter equals 20.
